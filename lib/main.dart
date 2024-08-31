@@ -5,6 +5,7 @@ import 'package:flutter_widget/widgets/2_full_screen_alert_dialog.dart';
 import 'package:flutter_widget/widgets/3_simple_dialog_widget.dart';
 import 'package:flutter_widget/widgets/4_aligh_widget.dart';
 import 'package:flutter_widget/widgets/5_animated_align.dart';
+import 'package:flutter_widget/widgets/choice_chip.dart';
 
 void main(){
   runApp(const MyApp());
@@ -14,8 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: AnimatedAlignWidget(),
+    return  MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
+        primarySwatch: Colors.blue,
+      ),
+      home: ChoiceChipWidget2(),
     );
   }
 }

@@ -1,5 +1,4 @@
 //This is  show FullScreen Alert Dialog
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 
