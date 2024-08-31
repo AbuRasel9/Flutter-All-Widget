@@ -59,8 +59,8 @@ class ChoiceChipWidget2 extends StatefulWidget {
 }
 
 class _ChoiceChipWidget2State extends State<ChoiceChipWidget2> {
-  List<String>chipList = ["Bangladesh", "Brazil", "Russia", "England"];
-  int? selectItem ;
+  List<String> chipList = ["Bangladesh", "Brazil", "Russia", "England"];
+  int? selectItem;
 
   @override
   Widget build(BuildContext context) {
@@ -71,38 +71,36 @@ class _ChoiceChipWidget2State extends State<ChoiceChipWidget2> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-
           children: [
             Text("Which Country is Aisan Country Select Country"),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             //wrap widget is used for list generate
-            Wrap (
+            Wrap(
               textDirection: TextDirection.ltr,
               verticalDirection: VerticalDirection.down,
               direction: Axis.horizontal,
               spacing: 10,
-              alignment:WrapAlignment.center,
+              alignment: WrapAlignment.center,
               children: List.generate(chipList.length, (int index) {
                 return ChoiceChip(
                   selectedColor: Colors.greenAccent,
                   disabledColor: Colors.orange,
-
+                  pressElevation: 3,
                   label: Text(chipList[index]),
                   selected: selectItem == index,
                   onSelected: (bool newSelectValue) {
-                  selectItem=(newSelectValue?index:null)!;
-                  print("---------------$selectItem");
-                  setState(() {
-
-                  });
-
-                  },);
+                    selectItem = (newSelectValue ? index : null)!;
+                    print("---------------$selectItem");
+                    setState(() {});
+                  },
+                );
               }),
             ),
           ],
         ),
       ),
-
     );
   }
 }
