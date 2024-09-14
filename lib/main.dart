@@ -1,14 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/widgets/1_alert_dialog.dart';
-import 'package:flutter_widget/widgets/2_full_screen_alert_dialog.dart';
-import 'package:flutter_widget/widgets/3_simple_dialog_widget.dart';
-import 'package:flutter_widget/widgets/4_aligh_widget.dart';
-import 'package:flutter_widget/widgets/5_animated_align.dart';
-import 'package:flutter_widget/widgets/6_choice_chip.dart';
-import 'package:flutter_widget/widgets/7_expansion_tile_widget.dart';
-import 'package:flutter_widget/widgets/8_sliver_app_bar_widget.dart';
-import 'package:flutter_widget/widgets/wrap_widget.dart';
+import 'package:flutter_widget/widgets/12_popup_menu_button_widget.dart';
+import 'package:flutter_widget/widgets/13_page_view_widget.dart';
+import 'package:flutter_widget/widgets/14_bottom_navigation_bar.dart';
 
 void main(){
   runApp(const MyApp());
@@ -19,11 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: WrapWidget(),
+      home: BottomNavigationBarWidget(),
     );
   }
 }
