@@ -16,6 +16,7 @@ import 'package:flutter_widget/widgets/23_future_builder_widget.dart';
 import 'package:flutter_widget/widgets/24_grid_tile_widget.dart';
 import 'package:flutter_widget/widgets/25_grid_tile_bar_widget.dart';
 import 'package:flutter_widget/widgets/26_grid_paper.dart';
+import 'package:flutter_widget/widgets/27_tooltip_widget.dart';
 import 'package:flutter_widget/widgets/3_simple_dialog_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       home: MultiProvider(providers: [
         ChangeNotifierProvider(create: (context) => SearchProvider())
       ],
-      child: const GridPaperWidget(),
+      child: const ToolTipWidget(),
       ),
     );
   }
