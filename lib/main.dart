@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/date_time.dart';
+import 'package:flutter_widget/animation/1_animated_container.dart';
+import 'package:flutter_widget/clock_real_time.dart';
 import 'package:flutter_widget/widgets/10_time_picker_widget.dart';
 import 'package:flutter_widget/widgets/12_popup_menu_button_widget.dart';
 import 'package:flutter_widget/widgets/13_page_view_widget.dart';
@@ -20,8 +21,11 @@ import 'package:flutter_widget/widgets/25_grid_tile_bar_widget.dart';
 import 'package:flutter_widget/widgets/26_grid_paper.dart';
 import 'package:flutter_widget/widgets/27_tooltip_widget.dart';
 import 'package:flutter_widget/widgets/28_stream_builder_widget.dart';
+import 'package:flutter_widget/widgets/30_table_widget.dart';
 import 'package:flutter_widget/widgets/3_simple_dialog_widget.dart';
 import 'package:provider/provider.dart';
+
+import 'animation/2_animated_text_animation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +45,7 @@ class MyApp extends StatelessWidget {
       home: MultiProvider(providers: [
         ChangeNotifierProvider(create: (context) => SearchProvider())
       ],
-      child: const DateTimeWidget(),
+      child: const AnimatedTextAnimation(),
       ),
     );
   }

@@ -14,13 +14,47 @@ class _TableWidgetState extends State<TableWidget> {
       appBar: AppBar(
         title: Text("Table"),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
         child: Table(
-          children: [
-            TableRow(children: [
-              Text("Banglades")
-            ])
+          border: TableBorder.all(),
+          children: const [
+            TableRow(
+              children: [
+                Center(child: Text("SI",style: TextStyle(fontWeight: FontWeight.bold),)),
+
+                Center(child: Text("Name",style: TextStyle(fontWeight: FontWeight.bold))),
+                Center(child: Text("ID",style: TextStyle(fontWeight: FontWeight.bold))),
+              ]
+            ),
+
+            TableRow(
+              children: [
+                Center(child: Text("0")),
+
+                Center(child: Text("Abu Rasel")),
+                Center(child: Text("201389038")),
+              ]
+            ),
+            TableRow(
+              children: [
+                Center(child: Text("1",)),
+
+                Center(child: Text("Hanif",)),
+                Center(child: Text("193023038")),
+              ]
+            ),
+            TableRow(
+                children: [
+                  Center(child: Text("3",)),
+
+                  Center(child: Text("Saif")),
+                  Center(child: Text("201023038")),
+                ]
+            ),
+
           ],
+
         ),
       ),
     );
