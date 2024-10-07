@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/animation/1_animated_container.dart';
+import 'package:flutter_widget/animation/3_confeti_animation.dart';
+import 'package:flutter_widget/animation/confeti_animation_.dart';
 import 'package:flutter_widget/clock_real_time.dart';
 import 'package:flutter_widget/widgets/10_time_picker_widget.dart';
 import 'package:flutter_widget/widgets/12_popup_menu_button_widget.dart';
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
       home: MultiProvider(providers: [
         ChangeNotifierProvider(create: (context) => SearchProvider())
       ],
-      child: const AnimatedTextAnimation(),
+      child: const ConfetiAnimationv2(),
       ),
     );
   }
