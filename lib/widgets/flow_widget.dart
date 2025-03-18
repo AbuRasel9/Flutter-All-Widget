@@ -113,6 +113,7 @@ class FlowWidgetDelegate extends FlowDelegate {
     final y = size.height;
     for (int i = 0; i < context.childCount; i++) {
       if (i == context.childCount - 1) {
+        //when collapse off than this main icon position
         context.paintChild(
           i,
           transform: Matrix4.translationValues(
@@ -122,6 +123,7 @@ class FlowWidgetDelegate extends FlowDelegate {
           ),
         );
       } else {
+        //each icon padding each icon
         var offset = 0.0;
         if (animation.value == 0) {
           offset = 0;
@@ -129,6 +131,7 @@ class FlowWidgetDelegate extends FlowDelegate {
           offset = (curve.transform(animation.value) * 40) +
               (iconSpacing * context.childCount);
         }
+        //when collapse off than sub icon position
         context.paintChild(i,
             transform: Matrix4.translationValues(
                 x - 50 - elementSpacing, y - offset * (i + 1) - 85, 0));
