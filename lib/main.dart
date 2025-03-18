@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/animation/confeti_animation_.dart';
 import 'package:flutter_widget/widgets/18_search_data/search_provider.dart';
 import 'package:flutter_widget/widgets/31_reorderable_list_view.dart';
+import 'package:flutter_widget/widgets/flow_widget.dart';
 import 'package:flutter_widget/widgets/interactive_viewer.dart';
 import 'package:provider/provider.dart';
 
@@ -20,11 +21,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: MultiProvider(providers: [
+ /*     home: MultiProvider(providers: [
         ChangeNotifierProvider(create: (context) => SearchProvider())
       ],
       child: const InteractiveViewerWidget(),
-      ),
+      ),*/
+      home: FlowWidget(),
     );
   }
 }
