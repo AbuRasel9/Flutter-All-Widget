@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/animation/confeti_animation_.dart';
-import 'package:flutter_widget/widgets/18_search_data/search_provider.dart';
-import 'package:flutter_widget/widgets/31_reorderable_list_view.dart';
-import 'package:flutter_widget/widgets/flow_widget.dart';
-import 'package:flutter_widget/widgets/interactive_viewer.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_widget/practise.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const InteractiveViewerWidget(),
       ),*/
-      home: FlowWidget(),
+      home: Practise(),
     );
   }
 }
