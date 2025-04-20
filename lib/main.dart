@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/animation/confeti_animation_.dart';
 import 'package:flutter_widget/practise.dart';
 
+import 'apiCall/upload_image.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const InteractiveViewerWidget(),
       ),*/
-      home: Practise(),
+      home: UploadImageScreen(),
     );
   }
 }
