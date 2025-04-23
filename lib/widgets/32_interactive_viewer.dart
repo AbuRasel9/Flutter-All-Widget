@@ -16,6 +16,7 @@ class _InteractiveViewerWidgetState extends State<InteractiveViewerWidget> {
       ),
       body: InteractiveViewer(
         clipBehavior: Clip.antiAlias,
+        alignment: Alignment.centerLeft,
         child: Center(
           child: Container(
             alignment: Alignment.center,
