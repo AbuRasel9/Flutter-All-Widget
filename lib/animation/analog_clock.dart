@@ -5,18 +5,18 @@ import 'package:audioplayers/audioplayers.dart'; // টিক টিক শব�
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: PremiumClockWithDots(),
+    home: AnalogClock(),
   ));
 }
 
-class PremiumClockWithDots extends StatefulWidget {
-  const PremiumClockWithDots({Key? key}) : super(key: key);
+class AnalogClock extends StatefulWidget {
+  const AnalogClock({Key? key}) : super(key: key);
 
   @override
-  State<PremiumClockWithDots> createState() => _PremiumClockWithDotsState();
+  State<AnalogClock> createState() => _AnalogClockState();
 }
 
-class _PremiumClockWithDotsState extends State<PremiumClockWithDots> with SingleTickerProviderStateMixin {
+class _AnalogClockState extends State<AnalogClock> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final AudioPlayer _player = AudioPlayer(); // অডিও প্লেয়ার তৈরি
 
