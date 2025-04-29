@@ -4,6 +4,7 @@ import 'package:flutter_widget/practise.dart';
 import 'package:flutter_widget/widgets/32_interactive_viewer.dart';
 
 import 'animation/animatied_builder_widget.dart';
+import 'animation/scale_transitaion_Widget.dart';
 import 'apiCall/upload_image.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const InteractiveViewerWidget(),
       ),*/
-      home: AnimatiedBuilderWidget(),
+      home: ScaleTransitaionWidget(),
     );
   }
 }

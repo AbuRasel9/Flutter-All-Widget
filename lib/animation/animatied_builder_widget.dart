@@ -17,7 +17,7 @@ class _AnimatiedBuilderWidgetState extends State<AnimatiedBuilderWidget>
     super.initState();
     _animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _heratbeatAnimation = Tween(begin: 180, end: 160).animate(CurvedAnimation(
+    _heratbeatAnimation = Tween(begin: 180.0, end: 160.0).animate(CurvedAnimation(
         parent: _animationController, curve: Curves.easeOutBack));
     _animationController.addStatusListener((AnimationStatus status) {
       if (status == AnimationStatus.completed) {
@@ -26,6 +26,7 @@ class _AnimatiedBuilderWidgetState extends State<AnimatiedBuilderWidget>
     });
     //forward starts the animation
     _animationController.forward();
+    print("---------abc");
   }
 
   @override
@@ -50,7 +51,7 @@ class _AnimatiedBuilderWidgetState extends State<AnimatiedBuilderWidget>
                   child: Center(
                     child: Icon(
                       Icons.favorite,
-                      color: Colors.blue,
+                      color: Colors.red,
                       size: _heratbeatAnimation.value,
                     ),
                   ),
