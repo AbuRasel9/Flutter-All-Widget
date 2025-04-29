@@ -1,0 +1,3 @@
+class NetworkRequester {
+  Future<Res>
+}

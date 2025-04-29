@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:flutter/services.dart';
+import 'package:flutter_device_imei/flutter_device_imei.dart';
+
+
 
 class Practise extends StatefulWidget {
   const Practise({super.key});
@@ -8,62 +14,45 @@ class Practise extends StatefulWidget {
 }
 
 class _PractiseState extends State<Practise> {
-  AlignmentGeometry _alignment1 = Alignment.topRight;
-  AlignmentGeometry _alignment2 = Alignment.bottomLeft;
+  String _platformVersion = 'Unknown';
 
-  void alignmentChange() {
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {
+    String platformVersion;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    // We also handle the message potentially returning null.
+    try {
+      platformVersion =
+          await FlutterDeviceImei.instance.getIMEI() ?? 'Unknown platform version';
+    } on PlatformException {
+      platformVersion = 'Failed to get platform version.';
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+
     setState(() {
-      _alignment1=_alignment1 == Alignment.topRight
-          ? Alignment.bottomLeft
-          : Alignment.topRight;
-      _alignment2 =_alignment2== Alignment.bottomLeft
-          ? Alignment.topRight
-          : Alignment.bottomLeft;
+      _platformVersion = platformVersion;
     });
-    print("check $_alignment1");
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Animated Align'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: Stack(
-          children: [
-            AnimatedAlign(
-
-              curve: Curves.bounceInOut,
-
-              alignment: _alignment1,
-              duration: Duration(seconds: 2),
-              child: Image.network(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX2csfNidti2yKtkD2DifEYvQZoI6WGOffhQ&s",
-                height: 100,
-                width: 100,
-              ),
-            ),
-            Center(
-              child: ElevatedButton(
-                  onPressed: () {
-                    alignmentChange();
-                    print("----------$_alignment1");
-                  },
-                  child: Text("Alignment Change")),
-            ),
-            AnimatedAlign(
-              curve: Curves.bounceInOut,
-              alignment: _alignment2,
-              duration: Duration(seconds: 2),
-              child: Image.network(
-                "https://www.angrybirds.com/wp-content/uploads/2022/05/ABCOM_202203_1000x1000_CharacterDimensio_Chuck_Dreamblast.png",
-                height: 150,
-                width: 150,
-              ),
-            )
-          ],
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
+        ),
+        body: Center(
+          child: Text('Running on: $_platformVersion\n'),
         ),
       ),
     );

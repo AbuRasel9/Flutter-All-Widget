@@ -206,6 +206,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_device_imei:
+    dependency: "direct main"
+    description:
+      name: flutter_device_imei
+      sha256: d6c581513646e31c1496cb67489fe8c0129af0536e8de894e5f8fc8b6c8b601b
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   flutter_lints:
     dependency: "direct dev"
     description:

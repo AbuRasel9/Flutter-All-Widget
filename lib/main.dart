@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget/animation/confeti_animation_.dart';
+import 'package:flutter_widget/animation/3_analog_clock.dart';
+import 'package:flutter_widget/animation/5_confeti_animation_.dart';
 import 'package:flutter_widget/practise.dart';
 import 'package:flutter_widget/widgets/32_interactive_viewer.dart';
 
-import 'animation/animatied_builder_widget.dart';
-import 'animation/scale_transitaion_Widget.dart';
+import 'animation/4_animatied_builder_widget.dart';
+import 'animation/6_scale_transitaion_Widget.dart';
 import 'apiCall/upload_image.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const InteractiveViewerWidget(),
       ),*/
-      home: ScaleTransitaionWidget(),
+      home: Practise(),
     );
   }
 }
