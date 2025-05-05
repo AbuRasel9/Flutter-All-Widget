@@ -6,9 +6,9 @@ abstract class AnimalDataEvent extends Equatable{
 @override
   List<Object?> get props => [];
 }
-class FetchAnimalData extends AnimalDataEvent{
+class FetchAnimalDataEvent extends AnimalDataEvent{
   final String countryName;
-  const FetchAnimalData({required this.countryName});
+  const FetchAnimalDataEvent({required this.countryName});
   @override
   List<Object?> get props => [countryName];
 }

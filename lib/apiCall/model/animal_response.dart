@@ -1,3 +1,13 @@
+// To parse this JSON data, do
+//
+//     final animalResponse = animalResponseFromJson(jsonString);
+
+import 'dart:convert';
+
+List<AnimalResponse> animalResponseFromJson(String str) => List<AnimalResponse>.from(json.decode(str).map((x) => AnimalResponse.fromJson(x)));
+
+String animalResponseToJson(List<AnimalResponse> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
 class AnimalResponse {
   String? name;
   Taxonomy? taxonomy;
@@ -23,6 +33,20 @@ class AnimalResponse {
         locations: locations ?? this.locations,
         characteristics: characteristics ?? this.characteristics,
       );
+
+  factory AnimalResponse.fromJson(Map<String, dynamic> json) => AnimalResponse(
+    name: json["name"],
+    taxonomy: json["taxonomy"] == null ? null : Taxonomy.fromJson(json["taxonomy"]),
+    locations: json["locations"] == null ? [] : List<String>.from(json["locations"]!.map((x) => x)),
+    characteristics: json["characteristics"] == null ? null : Characteristics.fromJson(json["characteristics"]),
+  );
+
+  Map<String, dynamic> toJson() => {
+    "name": name,
+    "taxonomy": taxonomy?.toJson(),
+    "locations": locations == null ? [] : List<dynamic>.from(locations!.map((x) => x)),
+    "characteristics": characteristics?.toJson(),
+  };
 }
 
 class Characteristics {
@@ -130,6 +154,60 @@ class Characteristics {
         ageOfSexualMaturity: ageOfSexualMaturity ?? this.ageOfSexualMaturity,
         ageOfWeaning: ageOfWeaning ?? this.ageOfWeaning,
       );
+
+  factory Characteristics.fromJson(Map<String, dynamic> json) => Characteristics(
+    prey: json["prey"],
+    nameOfYoung: json["name_of_young"],
+    groupBehavior: json["group_behavior"],
+    estimatedPopulationSize: json["estimated_population_size"],
+    biggestThreat: json["biggest_threat"],
+    mostDistinctiveFeature: json["most_distinctive_feature"],
+    gestationPeriod: json["gestation_period"],
+    habitat: json["habitat"],
+    diet: json["diet"],
+    averageLitterSize: json["average_litter_size"],
+    lifestyle: json["lifestyle"],
+    commonName: json["common_name"],
+    numberOfSpecies: json["number_of_species"],
+    location: json["location"],
+    slogan: json["slogan"],
+    group: json["group"],
+    color: json["color"],
+    skinType: json["skin_type"],
+    topSpeed: json["top_speed"],
+    lifespan: json["lifespan"],
+    weight: json["weight"],
+    height: json["height"],
+    ageOfSexualMaturity: json["age_of_sexual_maturity"],
+    ageOfWeaning: json["age_of_weaning"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "prey": prey,
+    "name_of_young": nameOfYoung,
+    "group_behavior": groupBehavior,
+    "estimated_population_size": estimatedPopulationSize,
+    "biggest_threat": biggestThreat,
+    "most_distinctive_feature": mostDistinctiveFeature,
+    "gestation_period": gestationPeriod,
+    "habitat": habitat,
+    "diet": diet,
+    "average_litter_size": averageLitterSize,
+    "lifestyle": lifestyle,
+    "common_name": commonName,
+    "number_of_species": numberOfSpecies,
+    "location": location,
+    "slogan": slogan,
+    "group": group,
+    "color": color,
+    "skin_type": skinType,
+    "top_speed": topSpeed,
+    "lifespan": lifespan,
+    "weight": weight,
+    "height": height,
+    "age_of_sexual_maturity": ageOfSexualMaturity,
+    "age_of_weaning": ageOfWeaning,
+  };
 }
 
 class Taxonomy {
@@ -169,4 +247,24 @@ class Taxonomy {
         genus: genus ?? this.genus,
         scientificName: scientificName ?? this.scientificName,
       );
+
+  factory Taxonomy.fromJson(Map<String, dynamic> json) => Taxonomy(
+    kingdom: json["kingdom"],
+    phylum: json["phylum"],
+    taxonomyClass: json["class"],
+    order: json["order"],
+    family: json["family"],
+    genus: json["genus"],
+    scientificName: json["scientific_name"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "kingdom": kingdom,
+    "phylum": phylum,
+    "class": taxonomyClass,
+    "order": order,
+    "family": family,
+    "genus": genus,
+    "scientific_name": scientificName,
+  };
 }
