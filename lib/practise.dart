@@ -1,60 +1,43 @@
-import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:flutter_device_imei/flutter_device_imei.dart';
-
+import 'dart:io';
+/*
+Exercise-5:
+Take two lists, for example:
 
 
-class Practise extends StatefulWidget {
-  const Practise({super.key});
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
-  @override
-  State<Practise> createState() => _PractiseState();
-}
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+and write a program that returns a list that contains only the elements that are common between them
+(without duplicates). Make sure your program works on two lists of different sizes.*/
+/*void main() {
+ List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 
-class _PractiseState extends State<Practise> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion =
-          await FlutterDeviceImei.instance.getIMEI() ?? 'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+  List<int>b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  List<int>c=[];
+  for(int i in a){
+    for(int j in b){
+      if(i==j){
+        c.add(i);
+      }
     }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
+  print(c);
+}*/
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
-      ),
-    );
+
+/*
+Exercise:6
+ Ask the user for a string and print out whether this string is a palindrome or not.
+
+A palindrome is a string that reads the same forwards and backwards
+*/
+void main(){
+  print("enter value for check palindrome");
+  String value=stdin.readLineSync()!;
+  String checkPalindrome=value.toLowerCase().split("").reversed.join("");
+  if(value==checkPalindrome){
+    print("$value is palindrome");
+  }else{
+    print("$value is not palindrome");
   }
 }
