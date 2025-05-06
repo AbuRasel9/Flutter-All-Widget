@@ -6,16 +6,16 @@ enum ApiCAllStatus { loading, inprogress, success, error }
 
 class AnimalDataState extends Equatable {
   final String message;
-  final AnimalResponse animalResponse;
+  final List<AnimalResponse> animalResponse;
   final ApiCAllStatus apiCAllStatus;
 
-  AnimalDataState({
+  const AnimalDataState({
     this.message = "",
     this.apiCAllStatus = ApiCAllStatus.inprogress,
-    AnimalResponse? animalResponse,
-  }) : animalResponse = animalResponse ?? AnimalResponse();
+    this.  animalResponse=const [],
+  });
 AnimalDataState copyWith({
-    String? message,AnimalResponse?animalResponse,ApiCAllStatus? status
+    String? message, List<AnimalResponse>?animalResponse,ApiCAllStatus? status
 }){
   return AnimalDataState(
     message: message ?? this.message,
