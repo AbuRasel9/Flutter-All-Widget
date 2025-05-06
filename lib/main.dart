@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const InteractiveViewerWidget(),
       ),*/
-      home: Practise(   ),
+      home: AnimatiedBuilderWidget(   ),
     );
   }
 }

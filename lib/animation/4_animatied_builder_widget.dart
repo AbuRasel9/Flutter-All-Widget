@@ -47,13 +47,11 @@ class _AnimatiedBuilderWidgetState extends State<AnimatiedBuilderWidget>
             child: AnimatedBuilder(
               animation: _animationController,
               builder: (context, child) {
-                return Container(
-                  child: Center(
-                    child: Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                      size: _heratbeatAnimation.value,
-                    ),
+                return Center(
+                  child: Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: _heratbeatAnimation.value,
                   ),
                 );
               },
