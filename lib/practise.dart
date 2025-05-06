@@ -99,15 +99,35 @@ void checkPrime(int number){
 // }
 
 
+//
+// //remove duplicate from list
+// void main(){
+//   Random random=Random();
+//   List<int>randomList=List.generate(10, (_) => random.nextInt(10),);
+//   print("original list$randomList");
+//
+//   print("remove duplicate form list ${removeDuplicate(randomList)}");
+// }
+// List<int>removeDuplicate(List<int>list){
+//   return list.toSet().toList();
+// }
+/*
 
-//remove duplicate from list
+Write a program (using functions!) that asks the user for a long string containing multiple words. Print back to the user the same string, except with the words in backwards order.
+
+For example, say I type the string:
+
+ex:input: My name is Michele
+Then I would see the string:
+
+ex output: Michele is name My
+*/
 void main(){
-  Random random=Random();
-  List<int>randomList=List.generate(10, (_) => random.nextInt(10),);
-  print("original list$randomList");
-
-  print("remove duplicate form list ${removeDuplicate(randomList)}");
+  print("Enter long string with multipule words");
+  String multipuleWords=stdin.readLineSync()!;
+  print("original string value: ${multipuleWords}");
+  print("after reverse value: ${reverseString(multipuleWords)}");
 }
-List<int>removeDuplicate(List<int>list){
-  return list.toSet().toList();
+String reverseString(String value){
+  return value.split(" ").reversed.join(' ');
 }
