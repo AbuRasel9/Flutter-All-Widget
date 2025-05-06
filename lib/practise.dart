@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 /*
 Exercise-5:
 Take two lists, for example:
@@ -49,7 +50,7 @@ Let’s say you are given a list saved in a variable:
 a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
 Write a Dart code that takes this list and makes a new list that has only the even elements of this list in it.
 
-*/
+*//*
 void main(){
   List<int>a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
   List<int>evenList=[];
@@ -61,4 +62,52 @@ void main(){
 
   }
 
+}*/
+/*
+Exercise-9
+Ask the user for a number and determine whether the number is prime or not.
+*/
+/*
+
+void main(){
+  print("enter a number for check prime");
+  int number=int.parse(stdin.readLineSync()!);
+  checkPrime(number);
+}
+void checkPrime(int number){
+  List<int>a=[for(var i=1;i<=number;i++)if(number%i==0)i];
+
+  a.length==2?print("$number is prime"):
+      print("Number is not prime");
+}
+*/
+
+
+
+// //find fibonacci series
+// void main(){
+//   print("range of fiboncci series number :");
+//   int rangeNumber=int.parse(stdin.readLineSync()!);
+//   print("$rangeNumber this fibonacci series ${fibonacciSeries(rangeNumber)} ");
+// }
+// List<int>fibonacciSeries(int rangeNumber){
+//   List<int>fibonnaciList=[0,1];
+//   for(int i=0;i<=rangeNumber;i++){
+//     fibonnaciList.add(fibonnaciList[i]+fibonnaciList[i+1]);
+//   }
+//   return fibonnaciList;
+// }
+
+
+
+//remove duplicate from list
+void main(){
+  Random random=Random();
+  List<int>randomList=List.generate(10, (_) => random.nextInt(10),);
+  print("original list$randomList");
+
+  print("remove duplicate form list ${removeDuplicate(randomList)}");
+}
+List<int>removeDuplicate(List<int>list){
+  return list.toSet().toList();
 }
