@@ -12,3 +12,6 @@ class FetchAnimalDataEvent extends AnimalDataEvent{
   @override
   List<Object?> get props => [countryName];
 }
+class AnimalListEvent extends AnimalDataEvent{
+
+}

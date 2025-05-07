@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:http/http.dart';
 class NetworkRequester {
 
-  Future<Response>getRequest(String url,String token)async{
+  Future<Response>getRequest(String url,String? token)async{
     try{
       Response response=await get(Uri.parse(url),headers: {
-        "X-Api-Key":"$token",
+        "X-Api-Key":token ?? "",
         "Content-Type":"application/json",
 
       });

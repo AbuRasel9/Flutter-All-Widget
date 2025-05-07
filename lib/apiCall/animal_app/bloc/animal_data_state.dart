@@ -8,6 +8,7 @@ class AnimalDataState extends Equatable {
   final String message;
   final List<AnimalResponse> animalResponse;
   final ApiCAllStatus apiCAllStatus;
+  final List<An>
 
   const AnimalDataState({
     this.message = "",

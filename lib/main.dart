@@ -6,6 +6,7 @@ import 'package:flutter_widget/widgets/32_interactive_viewer.dart';
 
 import 'animation/4_animatied_builder_widget.dart';
 import 'animation/6_scale_transitaion_Widget.dart';
+import 'apiCall/animal_details_screen.dart';
 import 'apiCall/upload_image.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const InteractiveViewerWidget(),
       ),*/
-      home: AnimatiedBuilderWidget(   ),
+      home: AnimalDetailsScreen(   ),
     );
   }
 }
