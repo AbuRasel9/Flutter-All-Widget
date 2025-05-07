@@ -7,10 +7,10 @@ abstract class AnimalDataEvent extends Equatable{
   List<Object?> get props => [];
 }
 class FetchAnimalDataEvent extends AnimalDataEvent{
-  final String countryName;
-  const FetchAnimalDataEvent({required this.countryName});
+  final String animalName;
+  const FetchAnimalDataEvent({required this.animalName});
   @override
-  List<Object?> get props => [countryName];
+  List<Object?> get props => [animalName];
 }
 class AnimalListEvent extends AnimalDataEvent{
 
