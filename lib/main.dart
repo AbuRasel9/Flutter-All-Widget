@@ -6,6 +6,8 @@ import 'package:flutter_widget/apiCall/animal_app/bloc/animal_data_bloc.dart';
 import 'package:flutter_widget/apiCall/network_requester/network_requester.dart';
 import 'package:flutter_widget/practise.dart';
 import 'package:flutter_widget/widgets/32_interactive_viewer.dart';
+import 'package:flutter_widget/widgets/34_list_view.dart';
+import 'package:flutter_widget/widgets/35_grid_view_builder.dart';
 
 import 'animation/4_animatied_builder_widget.dart';
 import 'animation/6_scale_transitaion_Widget.dart';
@@ -32,6 +34,15 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
+            appBarTheme: AppBarTheme(
+                backgroundColor: Colors.blue,
+                titleTextStyle: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                )),
+            brightness: Brightness.light,
+            primaryColor: Colors.blue,
             useMaterial3: true,
             primarySwatch: Colors.blue,
           ),
@@ -40,7 +51,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const InteractiveViewerWidget(),
       ),*/
-          home: AnimalDetailsScreen(),
+          home: GridViewBuilderWidget(),
         ));
   }
 }
