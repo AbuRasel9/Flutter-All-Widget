@@ -7,6 +7,9 @@ import 'package:flutter_widget/apiCall/network_requester/network_requester.dart'
 import 'package:flutter_widget/practise.dart';
 import 'package:flutter_widget/widgets/32_interactive_viewer.dart';
 import 'package:flutter_widget/widgets/35_nested_drop_down_form_feild.dart';
+import 'package:flutter_widget/widgets/36_Paginated%20Data%20Table/paginated_data_table_screen.dart';
+import 'package:flutter_widget/widgets/36_Paginated%20Data%20Table/provider/pagination_data_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'animation/4_animatied_builder_widget.dart';
 import 'animation/6_scale_transitaion_Widget.dart';
@@ -23,25 +26,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AnimalDataBloc(
+            networkRequester: NetworkRequester(),
+          ),
+        )
+      ],
+      child: MultiProvider(
         providers: [
-          BlocProvider(
-            create: (context) => AnimalDataBloc(
-              networkRequester: NetworkRequester(),
-            ),
+          ChangeNotifierProvider(
+            create: (context) => PaginationDataProvider(),
           )
         ],
-        child: MaterialApp(
+        child: const MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            useMaterial3: true,
-            primarySwatch: Colors.blue,
-          ),
-          /*     home: MultiProvider(providers: [
-        ChangeNotifierProvider(create: (context) => SearchProvider())
-      ],
-      child: const InteractiveViewerWidget(),
-      ),*/
-          home: NestedDropDownFromFeild(),
-        ));
+          home: PaginatedDataTableScreen(),
+        ),
+      ),
+    );
   }
 }
