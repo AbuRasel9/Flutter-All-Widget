@@ -47,6 +47,7 @@ dependencies:
   flutter_device_imei: ^0.0.4
   equatable:
   confetti:
+  animated_tree_view: ^2.3.0
 
 
 dev_dependencies:
