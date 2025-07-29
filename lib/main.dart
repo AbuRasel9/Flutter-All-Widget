@@ -10,6 +10,7 @@ import 'package:flutter_widget/widgets/35_nested_drop_down_form_feild.dart';
 import 'package:flutter_widget/widgets/36_Paginated%20Data%20Table/paginated_data_table_screen.dart';
 import 'package:flutter_widget/widgets/36_Paginated%20Data%20Table/provider/pagination_data_provider.dart';
 import 'package:flutter_widget/widgets/38_data_table_widget.dart';
+import 'package:flutter_widget/widgets/39_dismissible_widget.dart';
 import 'package:provider/provider.dart';
 
 import 'animation/4_animatied_builder_widget.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         ],
         child: const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: DataTableWidget(),
+          home: DismissableWidget(),
         ),
       ),
     );
