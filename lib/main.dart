@@ -18,6 +18,7 @@ import 'package:flutter_widget/widgets/41_alert_dialog_widget.dart';
 import 'package:flutter_widget/widgets/42_modal_bottom_sheet_widget.dart';
 import 'package:flutter_widget/widgets/43_animated_text_widget.dart';
 import 'package:flutter_widget/widgets/44_bottom_navigation_bar_widget_test.dart';
+import 'package:flutter_widget/widgets/45_drop_down_button_widget.dart';
 import 'package:flutter_widget/widgets/expansion_panel_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
         ],
         child: const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: BottomNavigationBarWidgetTest(),
+          home: DropDownButtonWidget(),
         ),
       ),
     );
